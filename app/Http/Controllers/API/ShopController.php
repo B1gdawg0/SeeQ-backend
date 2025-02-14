@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateShopRequest;
 use App\Http\Resources\ShopResource;
 use App\Http\Resources\IdResource;
 use App\Models\Shop;
+use App\Models\User;
 use App\Repositories\ShopRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -101,5 +102,5 @@ class ShopController extends Controller
         Gate::authorize('delete', $shop);
         $shop->delete();
     }
-
+    
 }

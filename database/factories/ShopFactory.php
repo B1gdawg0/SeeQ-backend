@@ -30,8 +30,8 @@ class ShopFactory extends Factory
             'address' => $this->faker->address,
             'description' => $this->faker->text(200),
             'is_open' => $this->faker->boolean,
-            'latitude' => $this->faker->latitude(-90, 90),
-            'longitude' => $this->faker->longitude(-180, 180),
+            'latitude' => $this->faker->latitude(5.610, 20.465),
+            'longitude' => $this->faker->longitude(97.344, 105.636),
         ];
     }
 }
