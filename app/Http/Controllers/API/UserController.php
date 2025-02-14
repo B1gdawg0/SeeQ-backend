@@ -25,6 +25,7 @@ class UserController extends Controller
 
     public function index()
     {
+        Gate::authorize('viewAny', User::class);
         $users = $this->userRepository->getAll();
         return UserResource::collection($users);
     }

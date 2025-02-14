@@ -37,6 +37,7 @@ Route::post('queues/{queue_id}/next', [QueueController::class, 'next'])->middlew
 Route::get('/subscribe', [QueueSubscriptionController::class, 'subscribe'])->middleware('auth:sanctum');
 
 Route::post('login', [AuthenticateController::class, 'login'])->name('user.login');
+Route::post('shop/login', [AuthenticateController::class, 'loginShop'])->name('shop.login');
 Route::post('register', [AuthenticateController::class, 'register'])->name('user.register');
 
 Route::get('auth/google', [AuthenticateController::class, 'redirectToGoogle'])->name('auth.google');

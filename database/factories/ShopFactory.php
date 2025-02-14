@@ -23,7 +23,6 @@ class ShopFactory extends Factory
         return [
             'name' => $this->faker->company,
             'email' => $this->faker->unique()->safeEmail,
-            'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'image_url' => $this->faker->imageUrl(640, 480, 'business'),
             'phone' => $this->faker->phoneNumber,

@@ -76,7 +76,7 @@ class ShopController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateShopRequest $request, Shop $shop)
+    public function update(Request $request, Shop $shop)
     {
         Gate::authorize('update', $shop);
         $shop->update([
@@ -89,7 +89,6 @@ class ShopController extends Controller
             'approve_status' => $request->get('approve_status'),
             'latitude' => $request->get('latitude'),
             'longitude' => $request->get('longitude'),
-            'user_id' => auth()->id(),
         ]);
         return IdResource::make($shop);
     }
