@@ -17,6 +17,8 @@ Route::middleware('throttle:api')->group(function () {
     });
 });
 
+Route::get('users/nearby-shops', [ShopController::class, 'showNearbyShops'])->middleware('auth:sanctum')->name('users.nearby-shops');
+
 Route::apiResource('users', UserController::class)->middleware('auth:sanctum');
 Route::put('users/{user}/password', [UserController::class, 'updatePassword'])
     ->middleware('auth:sanctum')

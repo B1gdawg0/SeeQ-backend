@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateShopRequest;
+use App\Http\Requests\NearbyShopsRequest;
 use App\Http\Requests\UpdateShopRequest;
 use App\Http\Resources\ShopResource;
 use App\Http\Resources\IdResource;
@@ -101,5 +102,27 @@ class ShopController extends Controller
         Gate::authorize('delete', $shop);
         $shop->delete();
     }
-    
+
+    public function showNearbyShops(NearbyShopsRequest $request)
+    {
+        Gate::authorize('viewAny', Shop::class);
+
+        $request->validate([
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
+            ]
+        );
+
+        $latitude = $request->get('latitude');
+        $longitude = $request->get("longitude");
+
+        if (!$latitude || !$longitude) {
+            return response()->json(['message' => 'Latitude and Longitude are required'], 400);
+        }
+
+        $shops = $this->shopRepository->getNearbyShops($latitude, $longitude);
+
+        return ShopResource::make($shops);
+    }
+
 }
