@@ -24,13 +24,13 @@ class ShopFactory extends Factory
             'name' => $this->faker->company,
             'email' => $this->faker->unique()->safeEmail,
             'password' => static::$password ??= Hash::make('password'),
-            'image_url' => $this->faker->imageUrl(640, 480, 'business'),
+            'image_url' => $this->faker->optional(0.3)->imageUrl(640, 480, 'business'), // 30% จะเป็น null
             'phone' => $this->faker->phoneNumber,
             'address' => $this->faker->address,
             'description' => $this->faker->text(200),
             'is_open' => $this->faker->boolean,
-            'latitude' => $this->faker->latitude(5.610, 20.465),
-            'longitude' => $this->faker->longitude(97.344, 105.636),
+            'latitude' => $this->faker->latitude(13.8200, 13.8500),
+            'longitude' => $this->faker->longitude(100.5600, 100.5800),
         ];
     }
 }
