@@ -37,8 +37,7 @@ class ShopController extends Controller
         private ShopRepository $shopRepository,
         private UserRepository $userRepository
     )
-    {
-    }
+    {}
 
     public function index()
     {
@@ -68,17 +67,6 @@ class ShopController extends Controller
         return ShopResource::collection($shops);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(CreateShopRequest $request)
     {
         Gate::authorize('create', Shop::class);
@@ -115,28 +103,11 @@ class ShopController extends Controller
         return IdResource::make($shop)->response()->setStatusCode(201);
     }
 
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Shop $shop)
     {
         Gate::authorize('view', Shop::class);
         return ShopResource::make($shop)->response()->setStatusCode(200);
     }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Shop $shop)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateShopRequest $request, Shop $shop)
     {
         Gate::authorize('update', $shop);
@@ -149,9 +120,6 @@ class ShopController extends Controller
         return IdResource::make($shop)->response()->setStatusCode(200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Shop $shop)
     {
         Gate::authorize('delete', $shop);

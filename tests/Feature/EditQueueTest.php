@@ -93,11 +93,6 @@ class EditQueueTest extends TestCase
             $updatedData
         );
 
-        // Set the authenticated user in the request
-//        $request->setUserResolver(function () use ($user) {
-//            return $user;
-//        });
-
         // Call update method
         $response = $this->queueController->update($request, $queueType);
 

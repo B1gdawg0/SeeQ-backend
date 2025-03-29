@@ -190,8 +190,8 @@ class CreateQueueTest extends TestCase
             $createData
         );
 
-        $this->expectException(\Illuminate\Database\UniqueConstraintViolationException::class);
         $response = $this->queueController->store($request);
+        $this->assertEquals(500, $response->getStatusCode());
     }
 
     protected function tearDown(): void

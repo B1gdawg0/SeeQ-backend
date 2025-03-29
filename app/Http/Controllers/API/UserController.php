@@ -20,9 +20,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
     public function __construct(
         private UserRepository $userRepository
@@ -56,41 +53,11 @@ class UserController extends Controller
         return UserResource::collection($users);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-       //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(User $user)
     {
         Gate::authorize('view', $user);
         return new UserResource($user);
     }
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateUserRequest $request, User $user)
     {
         Gate::authorize('update', $user);
@@ -100,10 +67,6 @@ class UserController extends Controller
         ]);
         return IdResource::make($user);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(User $user)
     {
         Gate::authorize('delete', $user);
