@@ -199,3 +199,5 @@ admin
 14. @[b1gdawg0](https://github.com/B1gdawg0) Feat: QRcode Scanner
 15. @[OhmSuphanat](https://github.com/OhmSuphanat) Feat: Recommend Items
 16. @[OhmSuphanat](https://github.com/OhmSuphanat) Feat: Logout
+
+# Release Tag: v1.0.1
