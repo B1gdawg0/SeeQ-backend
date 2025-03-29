@@ -1,0 +1,15 @@
+<?php
+
+namespace {{namespace}};
+
+use App\Repositories\Traits\SimpleCRUD;
+use {{model_path}};
+
+class {{class}}
+{
+    use SimpleCRUD;
+
+    private string $model = {{model}}::class;
+
+    // Add any custom repository methods here
+}

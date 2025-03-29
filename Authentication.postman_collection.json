@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "21405702-b7da-4dea-813c-3dbc261aa4e7",
+		"name": "Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37798322",
+		"_collection_link": "https://cssm66.postman.co/workspace/SeeQ~4d584caf-fba9-4243-a3b8-0288406943a7/collection/37798322-21405702-b7da-4dea-813c-3dbc261aa4e7?action=share&source=collection_link&creator=37798322"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"SSuphanat3830@gmail.com\",\n    \"password\": \"Password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Suphanat Sroyphet",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ssuphanat3830@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password123",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0000000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"encrypted\": \"eyJpdiI6IkVIdHZaekx1bVhGbHpPY0dpbnpvSEE9PSIsInZhbHVlIjoic2RwVVd2ZDErNE5oZ0lRbjRpY2RxUXNycmh2NWJxb09DL3pnOXJOZko2ekMzczhEOVNuOEVHc2lwNDZIdGl3bnJ1WWFSUElqenhwRnFjbEtqMHAwQWc9PSIsIm1hYyI6ImNjZWNlYzg2YjBlODhmNWZmMDhmNzI5NjI0YTc4NTUyMGU2ZWMyMzlhNzRlZjZlODIxNjI2YTY1ZWFkNjJhMTYiLCJ0YWciOiIifQ\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/decrypt",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redirect google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/auth/google",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
