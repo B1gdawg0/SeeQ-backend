@@ -13,11 +13,11 @@ SeeQ เป็นแพลตฟอร์มจองคิวร้านค้
 
 ## Related Repository
 
-- https://github.com/B1gdawg0/SeeQ-backend.git
-- https://github.com/ppwlsw/SeeQ-Frontend-Customer
-- https://github.com/kaepie/SeeQ-Frontend-Admin
-- https://github.com/ppwlsw/SeeQ-Frontend-Shop
-- https://github.com/OhmSuphanat/PoS-Stock-Backend
+- [SeeQ-backend](https://github.com/B1gdawg0/SeeQ-backend.git)
+- [SeeQ-Frontend-Customer](https://github.com/ppwlsw/SeeQ-Frontend-Customer)
+- [SeeQ-Frontend-Admin](https://github.com/kaepie/SeeQ-Frontend-Admin)
+- [SeeQ-Frontend-Shop](https://github.com/ppwlsw/SeeQ-Frontend-Shop)
+- [PoS-Stock-Backend](https://github.com/OhmSuphanat/PoS-Stock-Backend)
 
 ---
 
