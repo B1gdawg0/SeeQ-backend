@@ -18,6 +18,4 @@ class ItemRepository
     public function getItemByItemID(int $shopID, int $id){
         return $this->model::where('shop_id', $shopID)->where('id', $id)->first();
     }
-
-    // Add any custom repository methods here
 }

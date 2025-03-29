@@ -12,7 +12,6 @@ class QueueRepository
 
     private string $model = Queue::class;
 
-    // Add any custom repository methods here
 
     public function getQueueByShopID(int $shopID, int $queueID){
         return $this->model::where('shop_id', $shopID)->where('id', $queueID)->first();

@@ -368,7 +368,7 @@ class QueueController extends Controller
     public function next(Request $request, $queue_id)
     {
         $queue = $this->queueRepository->getById($queue_id);
-//        Gate::authorize("nextQueue", $queue); // if in development comment this line
+        Gate::authorize("nextQueue", $queue); // if in development comment this line
         if (!$queue){
             return response()->json(["message" => "Queue not found"], 404);
         }

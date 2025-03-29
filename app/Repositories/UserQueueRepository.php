@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class UserQueueRepository
 {
-    // Add any custom repository methods here
 
     public function checkQueueNumberAndQueueInfo(int $user_id, int $queueID){
         $record = DB::table('users_queues')
